@@ -3,202 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <title>☀ 阳光生活网</title>
-<style>
-body{background:#FFD700;font-family:'Comic Sans MS','Times 
-New Roman',cursive;margin:0;padding:20px;}
-/* 主表格 */
-table.main{width:780px;margin:0 
-auto;background:#FFFFF0;border:6px ridge #FF8C00;border-
-collapse:collapse;box-shadow:10px 10px 0px #CC7700;}
-/* 标题行 */
-td.title{background:linear-
-gradient(180deg,#FFA500,#FFD700);padding:14px;text-
-align:center;border-bottom:4px ridge #FF8C00;}
-td.title h1{font-size:48px;color:#3a2a0a;margin:0;text-shadow:2px 
-2px 0px #FFEC8B;letter-spacing:8px;}
-td.title .sub{font-size:14px;color:#5C4A0A;letter-
-spacing:4px;margin-top:4px;}
-/* 滚动公告条 */
-td.marquee{background:#000000;padding:6px;border-bottom:3px 
-ridge #FF8C00;}
-td.marquee marquee{color:#FFFF00;font-size:13px;font-
-family:'Courier New',monospace;letter-spacing:2px;}
-/* 导航 */
-td.nav{background:#FFEC8B;padding:10px;text-
-align:center;border-bottom:3px ridge #FF8C00;font-size:14px;}
-td.nav a{color:#0000FF;font-weight:bold;text-
-decoration:underline;margin:0 10px;}
-td.nav a:visited{color:#800080;}
-td.nav a:hover{color:#FF0000;background:#FFFF00;}
-/* 计数器 */
-td.counter{background:#3a2a0a;padding:6px;text-
-align:center;border-bottom:3px ridge #FF8C00;font-family:'Courier 
-New',monospace;font-size:14px;color:#00FF00;letter-spacing:3px;}
-td.counter span{background:#000;padding:2px 8px;border:1px inset 
-#00FF00;}
-/* 主体 */
-td.body{padding:0;}
-table.inner{width:100%;border-collapse:collapse;}
-td.left{width:60%;padding:14px;vertical-align:top;border-right:3px 
-ridge #FFD700;}
-td.right{width:40%;padding:14px;vertical-
-align:top;background:#FFFDF0;}
-/* 文章 */
-.post{border:2px ridge #FFA500;padding:10px;margin-
-bottom:12px;background:#FFFFF5;}
-.post .tag{font-size:11px;color:#FF8C00;font-weight:bold;letter-
-spacing:2px;}
-.post h2{font-size:15px;color:#3a2a0a;margin:6px 0;}
-.post h2 a{color:#0000FF;text-decoration:underline;}
-.post h2 a:hover{color:#FF0000;}
-.post p{font-size:13px;color:#5C4A0A;line-height:1.6;margin:4px 0;}
-.post .meta{font-size:11px;color:#B8860B;margin-top:4px;}
-/* 边栏 */
-.sidebox{border:3px ridge #FFA500;padding:10px;margin-
-bottom:14px;background:#FFFFF5;}
-.sidebox h3{font-size:16px;color:#3a2a0a;text-align:center;border-
-bottom:2px solid #FFD700;padding-bottom:4px;margin-bottom:8px;}
-.sidebox textarea{width:100%;height:100px;border:3px inset 
-#DAA520;padding:6px;font-family:'Comic Sans MS',cursive;font-
-size:13px;background:#FFFEF5;}
-.sidebox .btn{display:block;width:100%;padding:6px;margin-
-top:6px;background:#FFD700;border:3px outset #FFEC8B;font-
-weight:bold;text-align:center;cursor:pointer;font-
-size:14px;color:#3a2a0a;}
-.sidebox .btn:active{border:3px inset;}
-.sidebox .btn:hover{background:#FFC125;}
-.sidebox .link{display:block;text-align:center;margin-
-top:6px;color:#0000FF;font-size:13px;}
-.sidebox .link:hover{color:#FF0000;}
-.tipbox{border:3px ridge 
-#FFA500;padding:10px;background:#FFFACD;}
-.tipbox .t{font-weight:bold;color:#FF8C00;font-size:14px;margin-
-bottom:4px;}
-.tipbox .c{color:#5C4A0A;font-style:italic;font-size:13px;}
-/* 底部 */
-td.footer{background:#FFEC8B;border-top:3px ridge 
-#FF8C00;padding:10px;text-align:center;font-
-size:11px;color:#8B6914;line-height:1.8;}
-td.footer a{color:#0000FF;}
-td.footer a:hover{color:#FF0000;}
-/* 闪烁 */
-.blink{animation:blink 1s step-end infinite;}
-@keyframes blink{50%{opacity:0;}}
-/* 发光字体 */
-.glow{text-shadow:0 0 6px #FF8C00;}
-hr{border:2px ridge #FFA500;margin:8px 0;}
-</style>
 </head>
-<body>
-<table class="main">
-<!-- 标题 -->
-<tr><td class="title">
-<h1>☀ 阳光生活网</h1>
-<div class="sub">★ 您的心理健康伙伴 ★</div>
-</td></tr>
+<body style="background:#FFF8DC;font-family:'Times New 
+Roman',Times,serif;color:#3a2a0a;margin:0;padding:20px;">
+<!-- 最外层容器 -->
+<div style="width:780px;margin:0 
+auto;background:#FFFFF0;border:6px ridge #FF8C00;box-
+shadow:10px 10px 0px #CC7700;">
+<!-- 标题横幅 -->
+<div style="background:linear-
+gradient(180deg,#FFA500,#FFD700);padding:14px;text-
+align:center;border-bottom:4px ridge #FF8C00;">
+<h1 style="font-size:48px;color:#3a2a0a;margin:0;text-shadow:2px 
+2px 0px #FFEC8B;letter-spacing:8px;">☀ 阳光生活网</h1>
+<div style="font-size:14px;color:#5C4A0A;letter-
+spacing:4px;margin-top:4px;">★ 您的心理健康伙伴 ★</div>
+</div>
 <!-- 滚动公告 -->
-<tr><td class="marquee">
-<marquee scrollamount="2">★ 欢迎来到阳光生活网！本站专为正
-在接受心理治疗 &amp; 精神康复 &amp; 需要情绪支持的群体设计 
-★ 您并不孤单 ★ 每颗心都值得被倾听 ★ 本站已安全运行 87 天 
-★</marquee>
-</td></tr>
-<!-- 导航 -->
-<tr><td class="nav">
-<a href="home.html">🏠 本站首⻚</a> | 
-<a href="diary.html">📒 我的日记</a> | 
-<a href="public.html">🌍 公开日记</a> | 
-<a href="observe.html">☀ 阳光观测</a> | 
-<a href="message.html">📬 收件箱</a>
-</td></tr>
+<div style="background:#000000;padding:6px;border-bottom:3px 
+ridge #FF8C00;">
+<marquee scrollamount="2" style="color:#FFFF00;font-
+size:13px;font-family:'Courier New',monospace;letter-
+spacing:2px;">★ 欢迎来到阳光生活网！本站专为正在接受心理治疗 
+&amp; 精神康复 &amp; 需要情绪支持的群体设计 ★ 您并不孤单 ★ 
+每颗心都值得被倾听 ★ 本站已安全运行 87 天 ★</marquee>
+</div>
+<!-- 导航栏 -->
+<div style="background:#FFEC8B;padding:10px;text-
+align:center;border-bottom:3px ridge #FF8C00;font-size:14px;">
+<a href="home.html" style="color:#0000FF;font-
+weight:bold;margin:0 10px;">🏠 本站首⻚</a> |
+<a href="diary.html" style="color:#0000FF;font-weight:bold;margin:0 
+10px;">📒 我的日记</a> |
+<a href="public.html" style="color:#0000FF;font-
+weight:bold;margin:0 10px;">🌍 公开日记</a> |
+<a href="observe.html" style="color:#0000FF;font-
+weight:bold;margin:0 10px;">☀ 阳光观测</a> |
+<a href="message.html" style="color:#0000FF;font-
+weight:bold;margin:0 10px;">📬 收件箱</a>
+</div>
 <!-- 计数器 -->
-<tr><td class="counter">
-◇ 您是第 <span id="vc">004472</span> 位访问者 ◇
-</td></tr>
-<!-- 主体 -->
-<tr><td class="body">
-<table class="inner">
-<tr>
-<td class="left">
-<div class="post">
-<div class="tag">〓 情绪管理 〓</div>
-<h2><a href="#">✨ 试试这3个 grounding 技巧！</a></h2>
-<p>注意力像一盏灯，你把它放在哪里，哪里就被照亮。当你被思绪
+<div style="background:#3a2a0a;padding:6px;text-
+align:center;border-bottom:3px ridge #FF8C00;font-family:'Courier 
+New',monospace;font-size:14px;color:#00FF00;letter-
+spacing:3px;">
+◇ 您是第 <span style="background:#000;padding:2px 
+8px;border:1px inset #00FF00;" id="vc">004472</span> 位访问者 
+◇
+</div>
+<!-- 主体：两栏布局 -->
+<div style="display:flex;width:100%;">
+<!-- 左栏：文章 -->
+<div style="width:60%;padding:14px;border-right:3px ridge 
+#FFD700;">
+<div style="border:2px ridge #FFA500;padding:10px;margin-
+bottom:12px;background:#FFFFF5;">
+<div style="font-size:11px;color:#FF8C00;font-weight:bold;letter-
+spacing:2px;">〓 情绪管理 〓</div>
+<h2 style="font-size:15px;color:#3a2a0a;margin:6px 0 6px 0;"><a 
+href="#" style="color:#0000FF;">✨ 试试这3个 grounding 技巧！</
+a></h2>
+<p style="font-size:13px;color:#5C4A0A;line-height:1.6;margin:4px 
+0;">注意力像一盏灯，你把它放在哪里，哪里就被照亮。当你被思绪
 淹没时，试着感受你脚下的地板，听周围三种不同的声音，触摸你身
 边的物体......</p>
-<div class="meta">📅 2026-06-06  |  👁 <a href="#">阅读全文</
+<div style="font-size:11px;color:#B8860B;margin-top:4px;">📅 
+2026-06-06  |  👁 <a href="#" style="color:#0000FF;">阅读全文</
 a></div>
 </div>
-<div class="post">
-<div class="tag">〓 自我关怀 〓</div>
-<h2><a href="#">❤ 写给正在努力生活的你</a></h2>
-<p>很多时候我们对自己比对别人苛刻得多。今天，试着用你对朋友
+<div style="border:2px ridge #FFA500;padding:10px;margin-
+bottom:12px;background:#FFFFF5;">
+<div style="font-size:11px;color:#FF8C00;font-weight:bold;letter-
+spacing:2px;">〓 自我关怀 〓</div>
+<h2 style="font-size:15px;color:#3a2a0a;margin:6px 0 6px 0;"><a 
+href="#" style="color:#0000FF;">❤ 写给正在努力生活的你</a></
+h2>
+<p style="font-size:13px;color:#5C4A0A;line-height:1.6;margin:4px 
+0;">很多时候我们对自己比对别人苛刻得多。今天，试着用你对朋友
 说话的方式对自己说一句话。你值得被善待，包括被你善待。</p>
-<div class="meta">📅 2026-06-06  |  👁 <a href="#">阅读全文</
+<div style="font-size:11px;color:#B8860B;margin-top:4px;">📅 
+2026-06-06  |  👁 <a href="#" style="color:#0000FF;">阅读全文</
 a></div>
 </div>
-<div class="post">
-<div class="tag">〓 睡眠健康 〓</div>
-<h2><a href="#">🌙 睡前1小时可以做什么？</a></h2>
-<p>蓝光会影响褪黑素分泌，但"放下屏幕"最难的是放下。试着设置
+<div style="border:2px ridge #FFA500;padding:10px;margin-
+bottom:12px;background:#FFFFF5;">
+<div style="font-size:11px;color:#FF8C00;font-weight:bold;letter-
+spacing:2px;">〓 睡眠健康 〓</div>
+<h2 style="font-size:15px;color:#3a2a0a;margin:6px 0 6px 0;"><a 
+href="#" style="color:#0000FF;">🌙 睡前1小时可以做什么？</a></
+h2>
+<p style="font-size:13px;color:#5C4A0A;line-height:1.6;margin:4px 
+0;">蓝光会影响褪黑素分泌，但"放下屏幕"最难的是放下。试着设置
 一个"日落模式"，用阅读、书写或简单的拉伸来过渡到睡眠状态。</
 p>
-<div class="meta">📅 2026-06-05  |  👁 <a href="#">阅读全文</
+<div style="font-size:11px;color:#B8860B;margin-top:4px;">📅 
+2026-06-05  |  👁 <a href="#" style="color:#0000FF;">阅读全文</
 a></div>
 </div>
-<div class="post">
-<div class="tag">〓 人际关系 〓</div>
-<h2><a href="#">🚧 设立边界是自爱，不是自私</a></h2>
-<p>"不"是一个完整的句子。你不需要为自己的拒绝提供一⻓串解
+<div style="border:2px ridge #FFA500;padding:10px;margin-
+bottom:12px;background:#FFFFF5;">
+<div style="font-size:11px;color:#FF8C00;font-weight:bold;letter-
+spacing:2px;">〓 人际关系 〓</div>
+<h2 style="font-size:15px;color:#3a2a0a;margin:6px 0 6px 0;"><a 
+href="#" style="color:#0000FF;">🚧 设立边界是自爱，不是自私</
+a></h2>
+<p style="font-size:13px;color:#5C4A0A;line-height:1.6;margin:4px 
+0;">"不"是一个完整的句子。你不需要为自己的拒绝提供一⻓串解
 释。保护自己的能量，不是自私，是必要的自爱。</p>
-<div class="meta">📅 2026-06-05  |  👁 <a href="#">阅读全文</
+<div style="font-size:11px;color:#B8860B;margin-top:4px;">📅 
+2026-06-05  |  👁 <a href="#" style="color:#0000FF;">阅读全文</
 a></div>
 </div>
-<div align="center" style="margin-top:8px;font-
+<div style="text-align:center;margin-top:8px;font-
 size:14px;color:#FF8C00;">
-<span class="blink">◆</span> 正在加载更多内容... <span 
-class="blink">◆</span>
+<span style="animation:blink 1s step-end infinite;">◆</span> 正在
+加载更多内容... <span style="animation:blink 1s step-end 
+infinite;">◆</span>
 </div>
-</td>
-<td class="right">
-<div class="sidebox">
-<h3>☀ 阳光日记</h3>
+</div>
+<!-- 右栏 -->
+<div style="width:40%;padding:14px;background:#FFFDF0;">
+<div style="border:3px ridge #FFA500;padding:10px;margin-
+bottom:14px;background:#FFFFF5;">
+<h3 style="font-size:16px;color:#3a2a0a;text-align:center;border-
+bottom:2px solid #FFD700;padding-bottom:4px;margin-
+bottom:8px;">☀ 阳光日记</h3>
 <p style="font-size:11px;color:#B8860B;text-align:center;margin-
 bottom:6px;">~ 记录属于您的每日时光 ~</p>
-<textarea placeholder="今天发生了什么？写下您想写的......"></
-textarea>
-<span class="btn" id="saveBtn">💾 保存今天</span>
-<a href="diary.html" class="link">📂 查看完整日记 →</a>
+<textarea style="width:100%;height:100px;border:3px inset 
+#DAA520;padding:6px;font-family:'Times New 
+Roman',Times,serif;font-size:13px;background:#FFFEF5;" 
+placeholder="今天发生了什么？写下您想写的......"></textarea>
+<div style="display:block;width:100%;padding:6px 0;margin-
+top:6px;background:#FFD700;border:3px outset #FFEC8B;font-
+weight:bold;text-align:center;cursor:pointer;font-
+size:14px;color:#3a2a0a;" id="saveBtn">💾 保存今天</div>
+<a href="diary.html" style="display:block;text-align:center;margin-
+top:6px;color:#0000FF;font-size:13px;">📂 查看完整日记 →</a>
 </div>
-<div class="tipbox">
-<div class="t">💡 每日小贴士</div>
-<div class="c" id="dailyTip">试着记录一件今天让您感到温暖的小
-事。</div>
+<div style="border:3px ridge 
+#FFA500;padding:10px;background:#FFFACD;">
+<div style="font-weight:bold;color:#FF8C00;font-size:14px;margin-
+bottom:4px;">💡 每日小贴士</div>
+<div style="color:#5C4A0A;font-style:italic;font-size:13px;" 
+id="dailyTip">试着记录一件今天让您感到温暖的小事。</div>
 </div>
 <div style="text-align:center;font-size:11px;color:#B8860B;line-
 height:1.8;margin-top:10px;">
-<hr>
+<hr style="border:2px ridge #FFA500;">
 <p>🏆 本站已运行 87 天</p>
 <p>👤 创作者：Rainte Vesper</p>
 <p>🛠 最后更新：2026-06-07</p>
-<hr>
-<a href="#">📄 隐私政策</a> | <a href="#">📄 用户协议</a>
+<hr style="border:2px ridge #FFA500;">
+<a href="#" style="color:#0000FF;">📄 隐私政策</a> | <a href="#" 
+style="color:#0000FF;">📄 用户协议</a>
 </div>
-</td>
-</tr>
-</table>
-</td></tr>
+</div>
+</div>
 <!-- 底部 -->
-<tr><td class="footer">
+<div style="background:#FFEC8B;border-top:3px ridge 
+#FF8C00;padding:10px;text-align:center;font-
+size:11px;color:#8B6914;line-height:1.8;">
 <p>🌐 建议使用 Internet Explorer 6.0 或 Netscape Navigator 浏览
 本站  |  最佳分辨率 1024×768</p>
-<p>📧 <a 
-href="mailto:rainte@sunshine.com">rainte@sunshine.com</a>  |  © 
-2024-2026 阳光生活网 | 创作者：Rainte Vesper</p>
+<p>📧 <a href="mailto:rainte@sunshine.com" 
+style="color:#0000FF;">rainte@sunshine.com</a>  |  © 2024-2026 
+阳光生活网 | 创作者：Rainte Vesper</p>
 <p style="margin-top:2px;color:#808080;">⏳ 本⻚最后更新于 
 2026-06-07 17:42:21</p>
-</td></tr>
-</table>
+</div>
+</div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
 var c=localStorage.getItem('sunshine_visitor_count');
@@ -212,5 +186,8 @@ var t=['试着记录一件今天让您感到温暖的小事。','如果感到焦
 document.getElementById('dailyTip').textContent=t[new 
 Date().getDate()%t.length];});
 </script>
+<style>
+@keyframes blink{50%{opacity:0;}}
+</style>
 </body>
 </html>

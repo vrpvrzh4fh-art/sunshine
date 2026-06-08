@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录 - 阳光生活网</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#FFF8DC;font-family:'Times New Roman',Times,serif;color:#3a2a0a;padding:20px;display:flex;align-items:center;justify-content:center;min-height:100vh;}
+.login-box{width:400px;background:#FFFFF0;border:3px ridge #DAA520;padding:32px;box-shadow:6px 6px 0 rgba(218,165,32,0.15);text-align:center;}
+.login-box h1{font-size:28px;color:#5C4A0A;margin-bottom:4px;}
+.login-box .sub{font-size:13px;color:#B8860B;margin-bottom:24px;}
+.login-box input{display:block;width:100%;padding:10px 14px;margin-bottom:12px;border:2px inset #DAA520;font-size:14px;background:#FFFEF5;font-family:'Times New Roman',Times,serif;color:#3a2a0a;}
+.login-box button{width:100%;padding:10px;background:#FFD700;border:2px outset #FFEC8B;font-size:15px;font-weight:bold;cursor:pointer;color:#3a2a0a;font-family:'Times New Roman',Times,serif;}
+.login-box button:hover{background:#FFC125;}
+.login-box .error{color:#cc0000;font-size:13px;margin-top:10px;display:none;}
+.login-box .hint{font-size:11px;color:#B8860B;margin-top:16px;border-top:1px dashed #FFD700;padding-top:12px;}
+</style>
+</head>
+<body>
+<div class="login-box">
+<h1>☀️ 阳光生活网</h1>
+<div class="sub">登录您的账号以继续</div>
+<input type="text" id="username" placeholder="用户名">
+<input type="password" id="password" placeholder="密码">
+<button onclick="handleLogin()">登 录</button>
+<div class="error" id="errorMsg">用户名或密码错误</div>
+<div class="hint">首次使用？请联系管理员获取账号</div>
+</div>
+<script>
+function handleLogin() {
+    var user = document.getElementById('username').value.trim();
+    var pass = document.getElementById('password').value.trim();
+    if (user === 'fei27' && pass === 'Fei200602') {
+        window.location.href = 'home.html';
+    } else {
+        document.getElementById('errorMsg').style.display = 'block';
+    }
+}
+</script>
+</body>
+</html>

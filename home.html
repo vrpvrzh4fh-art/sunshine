@@ -189,5 +189,176 @@ Date().getDate()%t.length];});
 <style>
 @keyframes blink{50%{opacity:0;}}
 </style>
+<!-- ===== 强制私信弹窗 ===== -->
+<div id="messageOverlay" 
+style="position:fixed;top:0;left:0;width:100%;height:100%;backgroun
+d:rgba(0,0,0,0.7);z-index:99998;display:flex;align-
+items:center;justify-content:center;">
+<div style="width:600px;max-
+height:80vh;background:#FFFFF0;border:3px ridge #DAA520;box-
+shadow:0 0 30px rgba(0,0,0,0.5);display:flex;flex-
+direction:column;">
+<div style="background:#FFD700;padding:10px 14px;border-
+bottom:2px ridge #DAA520;display:flex;justify-content:space-
+between;align-items:center;">
+<span style="font-weight:bold;color:#3a2a0a;font-size:15px;">📬 收
+件箱（1封未读）</span>
+<span id="closeMsgBtn" style="cursor:pointer;font-
+size:18px;color:#3a2a0a;font-weight:bold;">✕</span>
+</div>
+<div style="padding:10px 14px;border-bottom:1px solid 
+#DAA520;background:#FFFDF0;">
+<input type="text" placeholder="搜索邮件..." 
+style="width:100%;padding:6px 10px;border:1px inset 
+#DAA520;font-size:13px;font-family:'Times New 
+Roman',Times,serif;background:#FFFEF5;color:#999;" readonly>
+</div>
+<div style="padding:16px 14px;overflow-
+y:auto;flex:1;background:#FFFFF5;">
+<div style="margin-bottom:14px;">
+<div style="font-size:11px;color:#B8860B;margin-bottom:4px;">发件
+人：管理员</div>
+<div style="background:#FFFACD;border:1px solid 
+#DAA520;padding:10px 14px;border-radius:8px;font-size:14px;line-
+height:1.8;white-space:pre-wrap;color:#3a2a0a;">
+菲，你最近还好吗。我试了你说的办法，窗帘拉紧确实睡得好了一
+些，
+但
+是昨天半夜又醒了。这次不是听到声音，是感觉有人在看我。我睁开
+眼，房间里没有别人。我告诉自己那是错觉，
+是
+我知道不是。我起来检查了一遍⻔窗，都是锁好的。回到床上躺下，
+那种被盯着的感觉还在。我想叫你的名字，
+我
+现在打字的时候手还在抖。我写了好多⻚日记，回头看发现一直在重
+复同一句话。那句话不是我写的，
+现
+在那句话还在纸上。它写的是“我饿了”。我不知道它是什么时候写上
+去的，但字迹是我的。
+在
+很抱歉半夜跟你说这些。我只是不知道该跟谁说。你看到的话回我一
+下，让我知道你还好。
+很
+我最近总是觉得很饿。吃了东⻄还是饿。
+饿
+</div>
+</div>
+<div style="text-align:right;font-size:11px;color:#B8860B;">—— 
+2026-05-22 02:47 ——</div>
+</div>
+<div style="border-top:1px solid #DAA520;padding:10px 
+14px;background:#FFFDF0;display:flex;gap:8px;">
+<input type="text" placeholder="无法回复此邮件" 
+style="flex:1;padding:6px 10px;border:1px inset #DAA520;font-
+size:13px;font-family:'Times New 
+Roman',Times,serif;background:#FFFEF5;color:#999;" readonly>
+<button style="padding:6px 14px;background:#D3D3D3;border:2px 
+outset #E0E0E0;font-size:13px;color:#888;cursor:not-allowed;">回
+复</button>
+</div>
+</div>
+</div>
+<script>
+// ===== 强制弹窗 =====
+document.getElementById('closeMsgBtn').addEventListener('click', 
+function() {
+    document.getElementById('messageOverlay').style.display = 
+'none';
+});
+// ===== 搜索框和锁定逻辑 =====
+document.addEventListener('DOMContentLoaded', function() {
+    // 在导航栏下方添加搜索框
+    var navBar = document.querySelector('.nav') || 
+document.querySelector('[style*="text-align:center"]
+[style*="background:#FFEC8B"]');
+    if (navBar) {
+        var searchDiv = document.createElement('div');
+        searchDiv.style.cssText = 'background:#FFFDF0;padding:10px 
+14px;border-bottom:2px ridge #DAA520;display:flex;gap:8px;align-
+items:center;';
+        searchDiv.innerHTML = `
+            <input type="text" id="searchBox" placeholder="搜索公开日
+记..." style="flex:1;padding:8px 12px;border:2px inset 
+#DAA520;font-size:14px;font-family:'Times New 
+Roman',Times,serif;background:#FFFEF5;color:#3a2a0a;">
+            <button id="searchBtn" style="padding:8px 
+18px;background:#FFD700;border:2px outset #FFEC8B;font-
+size:14px;font-weight:bold;cursor:pointer;color:#3a2a0a;font-
+family:'Times New Roman',Times,serif;">搜索</button>
+        `;
+        navBar.parentNode.insertBefore(searchDiv, 
+navBar.nextSibling);
+    }
+    // 搜索结果容器
+    var resultDiv = document.createElement('div');
+    resultDiv.id = 'searchResult';
+    resultDiv.style.cssText = 
+'display:none;background:#FFFFF5;border:2px ridge 
+#FFA500;padding:16px;margin:10px 14px;';
+    resultDiv.innerHTML = `
+        <div style="font-size:11px;color:#FF8C00;font-
+weight:bold;letter-spacing:2px;margin-bottom:6px;">〓 搜索结果：
+找到 1 条匹配 〓</div>
+        <div style="border:1px solid 
+#DAA520;padding:12px;background:#FFFFF0;">
+            <div style="font-size:11px;color:#B8860B;">📅 2024-08-12  
+|  🏷 健康饮⻝</div>
+            <h3 style="font-size:16px;color:#3a2a0a;margin:6px 0;">抑
+郁症适合吃什么？推荐⻝谱</h3>
+            <p style="font-size:13px;color:#5C4A0A;line-height:1.6;">抑
+郁症患者在饮⻝上应当注意均衡营养，多摄入富含Omega-3脂肪酸
+的⻝物，如深海⻥、亚麻籽等。同时，规律进⻝也非常重要。以下推
+荐三款简单易做的⻝谱，适合日常调理......</p>
+            <div style="font-size:12px;color:#0000FF;margin-
+top:8px;cursor:pointer;text-decoration:underline;" id="unlockLink">
+阅读全文 →</div>
+        </div>
+    `;
+    
+    // 把搜索结果插入到⻚面主体中
+    var mainBody = document.querySelector('[style*="display:flex"]
+[style*="width:100%"]') || document.querySelector('.main') || 
+document.body;
+    mainBody.parentNode.insertBefore(resultDiv, mainBody);
+    // 搜索按钮逻辑
+    document.addEventListener('click', function(e) {
+        if (e.target.id === 'searchBtn') {
+            var query = 
+document.getElementById('searchBox').value.trim();
+            if (query === '但是我现在很饿') {
+                resultDiv.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                var lockOverlay = document.createElement('div');
+                lockOverlay.id = 'lockOverlay';
+                lockOverlay.style.cssText = 
+'position:fixed;top:0;left:0;width:100%;height:100%;z-
+index:99997;background:transparent;';
+                document.body.appendChild(lockOverlay);
+                
+                document.addEventListener('keydown', function 
+blockKeys(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                });
+                
+                setTimeout(function() {
+                    alert('⻚面已锁定。请阅读搜索结果。');
+                }, 500);
+            }
+        }
+    });
+    // 解锁链接
+    document.addEventListener('click', function(e) {
+        if (e.target.id === 'unlockLink') {
+            e.preventDefault();
+            document.body.style.overflow = '';
+            var overlay = document.getElementById('lockOverlay');
+            if (overlay) overlay.remove();
+            alert('你看到了不该看的。');
+        }
+    });
+});
+</script>
 </body>
 </html>
